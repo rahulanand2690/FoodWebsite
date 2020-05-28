@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap4-toggle/css/bootstrap4-toggle.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -117,8 +118,18 @@
               "devServerTarget": "FoodWebsite:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://rahulanand2690.github.io/FoodWebsite/",
+            "repo": "https://github.com/rahulanand2690/FoodWebsite.git",
+            "name": "RahulAnand",
+            "email": "rahulanand2690@gmail.com"
+          }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "FoodWebsite"
 }

@@ -1,0 +1,18 @@
+<div class="container" >
+  <div class="card">
+    <ul class="list-group">
+      <li class="list-group-item card-header">
+        <h2 class="card-header">{{dish.name}}</h2>
+      </li>
+      <li class="list-group-item card- body">
+        <img [src]="dish.image" alt= {{dish.name}} style="max-height: 400px;max-width: 500px;">
+        </li>
+        <li class="list-group-item card- body">
+          <p class="card-text">{{dish.description}}</p>
+        </li>
+        <li class="list-group-item">
+          <button type="submit" class="btn btn-primary">Order</button>
+        </li>
+    </ul>
+  </div>
+</div>

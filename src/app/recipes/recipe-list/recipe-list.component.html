@@ -1,0 +1,16 @@
+<div class="container">
+  <div *ngFor="let recipe of recipes">
+    <ul class="list-group">
+      <li class="list-group-item">
+
+        <a href="#" (click) ="onSelectedRecipe(recipe)">
+          <h4>{{ recipe.name }}</h4>
+        </a>
+
+      </li>
+    </ul>
+    <div class="pull-right">
+      <app-recipe-details [recipeElement]="recipe"></app-recipe-details>
+    </div>
+  </div>
+</div>

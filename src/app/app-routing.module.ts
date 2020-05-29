@@ -6,18 +6,26 @@ import { DishDetailsComponent } from './dish/dish-details/dish-details.component
 import { HomeComponent } from './home/home.component';
 import { OrdersComponent } from './orders/orders.component';
 import { DishStartComponent } from './dish/dish-start/dish-start.component';
+import { LoginComponent } from './login/login.component';
+import { ExperimentComponent } from './experiment/experiment.component';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'dish', component: DishComponent,
+  {
+    path: 'dish',
+    component: DishComponent,
     children: [
-       { path: '', component: DishStartComponent },
+      { path: '', component: DishStartComponent },
       { path: 'dish-list', component: DishListComponent },
       { path: 'dishDetail', component: DishDetailsComponent },
     ],
   },
-  { path: 'order', component: OrdersComponent }
+  { path: 'order', component: OrdersComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'e', component: ExperimentComponent },
+  { path: '**', component: PageNotFoundComponent },
   /* {path:'', component:},
   {path:'', component:},
   {path:'', component:},

@@ -13,7 +13,11 @@ import { DishDetailsComponent } from './dish/dish-details/dish-details.component
 import { HomeComponent } from './home/home.component';
 import { OrdersComponent } from './orders/orders.component';
 import { DishStartComponent } from './dish/dish-start/dish-start.component';
-
+import { FooterComponent } from './shared/footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import { ExperimentComponent } from './experiment/experiment.component';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,11 +30,16 @@ import { DishStartComponent } from './dish/dish-start/dish-start.component';
     DishDetailsComponent,
     HomeComponent,
     OrdersComponent,
-    DishStartComponent
+    DishStartComponent,
+    FooterComponent,
+    LoginComponent,
+    ExperimentComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

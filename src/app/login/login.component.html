@@ -1,0 +1,117 @@
+<div class="container text-center">
+  <div class=" row col-md-5 text-center">
+    <form class="form-signin" [formGroup] = "loginForm" (ngSubmit)= "onLogin()" *ngIf ="!newUser">
+      <img class="mb-4" src="favicon.ico" alt="" width="72" height="72" />
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input
+        type="email"
+        id="inputEmail"
+        class="form-control"
+        placeholder="Email address"
+        required=""
+        autofocus=""
+        formControlName = "email"
+      />
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input
+        type="password"
+        id="inputPassword"
+        class="form-control"
+        placeholder="Password"
+        required=""
+        formControlName = "password"
+      />
+      <div class="checkbox mb-3">
+        <!-- <label>
+          <input type="checkbox" value="remember-me" /> Remember me
+        </label> -->
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]= "!loginForm.valid">
+        Sign in
+      </button>
+      <label>
+        <input type="checkbox" value="newUser" (click)="onNewUser()"/> New User?
+      </label>
+      <div class="alert alert-success alert-dismissible fade show" *ngIf="isLoggedIn">
+        <strong>Success!</strong> Your message has been sent successfully.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" (close.bs.alert) ="onLogout()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+      <!-- <p class="mt-5 mb-3 text-muted">© 2017-2018</p> -->
+    </form>
+
+
+    <form class="form-signin" [formGroup] = "signUpForm" (ngSubmit)= "onSignup()" *ngIf ="newUser">
+      <img class="mb-4" src="favicon.ico" alt="" width="72" height="72" />
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <label for="userName" class="sr-only">User Name</label>
+      <input
+        type="text"
+        id="userName"
+        class="form-control"
+        placeholder="User Name"
+        required=""
+        autofocus=""
+        formControlName = "userName"
+      />
+      <label for="userEmailId" class="sr-only">Email address</label>
+      <input
+        type="email"
+        id="userEmailId"
+        class="form-control"
+        placeholder="Email address"
+        required=""
+        autofocus=""
+        formControlName = "userEmailId"
+      />
+      <span *ngIf = "!signUpForm.get('userEmailId').valid && signUpForm.get('userEmailId').touched" class="invalidMessage">Please enter correct email Id.</span>
+      <div formGroupName="account">
+
+        <label for="userPassword" class="sr-only">Password</label>
+        <input
+          type="password"
+          id="userPassword"
+          class="form-control"
+          placeholder="Password"
+          required=""
+          formControlName = "userPassword"
+        />
+        <label for="confirmPassword" class="sr-only">confirmPassword</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          class="form-control"
+          placeholder="confirmPassword"
+          required=""
+          formControlName = "confirmPassword"
+          [ngClass]= "{'is-InValid':signUpForm.get('account').errors ||
+                                    signUpForm.get('account.confirmPassword').touched &&
+                                    !signUpForm.get('account.confirmPassword').valid }"
+        />
+        <span *ngIf = "signUpForm.get('account').errors?.nomatch" class="invalidMessage"> Email and Confirm Email doesn't match...</span>
+      </div>
+
+      <div class="checkbox mb-3">
+        <!-- <label>
+          <input type="checkbox" value="remember-me" /> Remember me
+        </label> -->
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled] ="!signUpForm.valid" >
+        Sign Up
+      </button>
+      <div class="alert alert-success alert-dismissible fade show" *ngIf="isLoggedIn">
+        <strong>Success!</strong> Your message has been sent successfully.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" (close.bs.alert) ="onLogout()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+      <!-- <p class="mt-5 mb-3 text-muted">© 2017-2018</p> -->
+    </form>
+  </div>
+  <!-- https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg -->
+</div>
+

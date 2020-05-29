@@ -1,0 +1,9 @@
+.container1{
+  max-width: 588px;
+}
+.is-InValid{
+  border: 1px solid red;
+}
+.invalidMessage{
+  color: red;
+}

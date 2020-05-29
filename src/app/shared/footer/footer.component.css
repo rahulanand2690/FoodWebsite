@@ -1,0 +1,18 @@
+.pt-4 {
+  background-color: #0c5479 ;
+}
+
+.py-3 {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #b6c1c8;
+}
+.footer1 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color:rgb(40, 43, 43);
+  text-align: center;
+  height:15%
+}

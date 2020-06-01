@@ -4,4 +4,7 @@ export class Dish{
   description: string;
   image: string;
   isVeg?: boolean;
+  inStock?: boolean;
+  isEdit?: boolean;
+  order?: string;
 }

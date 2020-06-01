@@ -15,6 +15,7 @@ export class DishService {
       image: 'assets/1.jpg',
      // image: 'assets/palakpaneer.jpg',
      isVeg: true,
+     inStock: true,
     },
     {
       id: 2,
@@ -23,6 +24,7 @@ export class DishService {
       image: 'assets/2.jpg',
      // image: 'assets/rajma.jpg',
       isVeg: true,
+      inStock: true
     },
     {
       id: 3,
@@ -31,6 +33,7 @@ export class DishService {
       image: 'assets/3.jpg',
       //image: 'assets/AlooMatar.jpg',
       isVeg: true,
+      inStock: true
     },
     {
       id: 4,
@@ -38,11 +41,16 @@ export class DishService {
       description: 'In cuisine, an omelette or omelet is a dish made from beaten eggs, fried with butter or oil in a frying pan. It is quite common for the omelette to be folded around fillings such as cheese, chives, vegetables, mushrooms, meat, or some combination of the above',
       image: 'assets/4.jpg',
       isVeg: false,
+      inStock: false
       //image: 'assets/AlooMatar.jpg',
     },
   ];
 
+  dishClickable = false;
   selectedDish = new Subject<Dish>();
+  selcetedDishIndex = new Subject<number>();
+  isOrderplaceable = new Subject<boolean>();
+
   constructor() {}
 
   getAllDish() {

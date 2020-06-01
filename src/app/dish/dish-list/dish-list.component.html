@@ -1,10 +1,9 @@
 <div class="container">
-  <div *ngFor = "let dish of dishes">
-    <ul class = "list-group">
-      <a (click) = "onSelectedDish(dish)" style="cursor:pointer;">
-      <li class= "list-group-item">
+  <div *ngFor = "let dish of dishes; let i = index" >
+    <ul class = "list-group" >
+      <a (click) = "onSelectedDish(dish,i)" style="cursor:pointer;" >
+      <li class= "list-group-item" >
         <h4>{{dish.name}}</h4>
-      </li>
       </a>
     </ul>
   </div>

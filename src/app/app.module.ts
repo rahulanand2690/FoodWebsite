@@ -15,7 +15,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { DishStartComponent } from './dish/dish-start/dish-start.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { LoginComponent } from './login/login.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { ExperimentComponent } from './experiment/experiment.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 @NgModule({
@@ -40,6 +40,7 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

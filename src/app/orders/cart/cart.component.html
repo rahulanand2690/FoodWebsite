@@ -1,0 +1,58 @@
+<div *ngIf = "cart.length >= 1">
+<h3 >Review your cart...</h3>
+<div class="container">
+
+  <div class= "articles">
+    <ul class="list-group" *ngFor =" let item of cart">
+      <li class="list-group-item">
+      <div class= "col-lg-4">
+        <h4> {{item.name}}</h4>
+      </div>
+
+
+
+        <div class= "col-lg-8" style="float:right;">
+          <div class="col-lg-2">
+             Quantity:
+          </div>
+
+        <div class="col-lg-3">
+          <div class="input-group">
+          <span class="input-group-btn">
+          <button type="button" class="btn btn-danger"  data-type="minus" data-field="" (click)="onOuantity(-1,item)">
+            <svg class="bi bi-cart-dash" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M6 7.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z"/>
+              <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+            </svg>
+          </button>
+         </span>
+          <input type="number" id="quantity"  class="form-control input-number" [(ngModel)]= item.quantity name="quantity" min="0" max ="10">
+          <span class="input-group-btn">
+          <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" (click)="onOuantity(1,item)">
+            <svg class="bi bi-cart-plus" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8.5 5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 .5-.5z"/>
+              <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0v-2z"/>
+              <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+            </svg>
+          </button>
+         </span>
+          </div>
+      </div>
+    </div>
+
+      </li>
+    </ul>
+    <br>
+    <button class="btn btn-success" type ="submit" (click) = "onPlaceOrder()"> Place Order</button>
+  </div>
+</div>
+</div>
+<div *ngIf = "cart.length == 0" >
+  <h3 ><br><br>No items in cart... Please add some items in cart</h3>
+  <img [src] = "'assets/EmptyCart.jpg'" style="max-width: 264px;  max-height: 300px;" class="center">
+  <div class= "container col-md-5">
+    <button type= "button" class= "btn btn-info center" (click) ="goToDish()">Select some dish!</button>
+  </div>
+
+</div>
+

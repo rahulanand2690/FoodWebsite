@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Dish } from '../dish/Dish.model';
+import { OrderService } from './order.service';
 
 @Component({
   selector: 'app-orders',
@@ -6,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-
-  constructor() { }
+  orders: Dish[] = [];
+  constructor(private orderService: OrderService) {
+    this.orders = this.orderService.getOrders();
+  }
 
   ngOnInit(): void {
   }

@@ -2,6 +2,7 @@ import { Component, OnInit, Input,OnDestroy } from '@angular/core';
 import { Dish } from '../Dish.model';
 import { DishService } from '../dish.service';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/orders/cart/cart.service';
 
 @Component({
   selector: 'app-dish-details',
@@ -24,7 +25,7 @@ export class DishDetailsComponent implements OnInit, OnDestroy {
      //isEdit: false
     };
 //dish: Dish;
-  constructor(private dishService: DishService, private router:Router) {
+  constructor(private dishService: DishService, private router: Router, private cartService: CartService) {
     this.dishService.selectedDish.subscribe(
       data => {
         this.dish = data;
@@ -41,8 +42,8 @@ export class DishDetailsComponent implements OnInit, OnDestroy {
     this.dishService.selcetedDishIndex.subscribe(
       data => this.dishIndex = data
     );
-    console.log("in constructor...."+JSON.stringify(this.dish))
-    console.log("Dish Index in constructor********"+this.dishIndex);
+    //console.log("in constructor...."+JSON.stringify(this.dish))
+    //console.log("Dish Index in constructor********"+this.dishIndex);
   }
 
   ngOnInit(): void {
@@ -56,21 +57,25 @@ export class DishDetailsComponent implements OnInit, OnDestroy {
     //console.log("In onQuantiy"+JSON.stringify(this.dish));
   }
   onOrder(){
-    this.dish.order = this.quantity.toString();
+    this.dish.quantity = this.quantity;
+
+    this.dishService.isOrderplaceable.next(false);
+    alert('Dish added to cart!');
+   // console.log("order clicked"+ JSON.stringify(this.dish));
+    this.cartService.addDishToCart(this.dish);
+
 
     this.quantity = 0;
-    this.dishService.isOrderplaceable.next(false);
-    alert('order places sucessfully!!');
-    console.log("order clicked"+ JSON.stringify(this.dish));
 
   }
 
   onGoToCart(){
-    this.router.navigate(['/order']);
+
+    this.router.navigate(['/cart']);
   }
 
   ngOnDestroy() {
-    //this.dish.isEdit = false;
-    console.log("ondestroy called!!!!!!!!!")
+   /*  //this.dish.isEdit = false;
+    console.log("ondestroy called!!!!!!!!!") */
   }
 }

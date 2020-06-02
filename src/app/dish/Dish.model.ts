@@ -7,4 +7,5 @@ export class Dish{
   inStock?: boolean;
   isEdit?: boolean;
   order?: string;
+  quantity?: number;
 }

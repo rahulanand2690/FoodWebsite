@@ -9,6 +9,7 @@ import { DishStartComponent } from './dish/dish-start/dish-start.component';
 import { LoginComponent } from './login/login.component';
 import { ExperimentComponent } from './experiment/experiment.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { CartComponent } from './orders/cart/cart.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
   },
   { path: 'order', component: OrdersComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'cart', component: CartComponent },
   { path: 'e', component: ExperimentComponent },
   { path: '**', component: PageNotFoundComponent },
   /* {path:'', component:},

@@ -18,6 +18,7 @@ import { LoginComponent } from './login/login.component';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { ExperimentComponent } from './experiment/experiment.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { CartComponent } from './orders/cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
     FooterComponent,
     LoginComponent,
     ExperimentComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

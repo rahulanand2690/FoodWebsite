@@ -19,4 +19,7 @@ export class OrderService {
    setOrders(orders){
      this.orders = orders;
    }
+   resetOrders(){
+     this.orders = [];
+   }
 }

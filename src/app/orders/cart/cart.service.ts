@@ -34,4 +34,8 @@ export class CartService {
     this.cart.push(dish);
   }
 
+  resetCart(){
+    this.cart = [];
+  }
+
 }

@@ -12,7 +12,7 @@ import { CartService } from 'src/app/orders/cart/cart.service';
 export class DishDetailsComponent implements OnInit, OnDestroy {
   quantity = 0;
   dishIndex: number;
-  dishClickable: boolean;
+  dishClickable:boolean = true;
  dish: Dish = {
       id: 1,
       name: 'PalakPaneer',

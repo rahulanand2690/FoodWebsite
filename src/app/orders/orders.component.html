@@ -12,12 +12,20 @@
   <br><br>
   <img [src] = "'assets/order_successfull.jpg'" style="max-width: 264px;  max-height: 300px;" class="center">
   <div class= "container col-md-5">
-    <button type= "button" class= "btn btn-info center" [routerLink]= "['/home']">Go to Home</button>
+    <button type= "button" class= "btn btn-info center" (click) = "onGoHome()">Go to Home</button>
   </div>
 
 </div>
 <div *ngIf = "orders.length == 0" class ="pull-right">
   <h3><br><br> No Orders yet !!!</h3>
+
+    <img [src] = "'assets/emptyOrder.jpg'" style="max-width: 264px;  max-height: 300px;" class="center">
+    <div class= "container col-md-5">
+      <button type= "button" class= "btn btn-info center" [routerLink] = "['/dish']">Choose Some Dish!</button>
+    </div>
+
+  </div>
+
 </div>
-</div>
+
 

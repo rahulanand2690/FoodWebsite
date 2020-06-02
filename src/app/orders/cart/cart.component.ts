@@ -22,6 +22,7 @@ export class CartComponent implements OnInit {
   onPlaceOrder(){
       this.orderService.setOrders(this.cart);
       this.router.navigate(['/order']);
+      this.cartService.resetCart();
   }
   goToDish(){
     this.router.navigate(['/dish']);
